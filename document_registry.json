@@ -3,5 +3,50 @@
     "filename": "Generative AI.pdf",
     "upload_time": "2025-04-16T09:07:11.624230",
     "chunks": 14
+  },
+  "aef71301edc9a9a4d8d05e6f215f63ea": {
+    "filename": "Agentic RAG.pdf",
+    "upload_time": "2025-04-16T10:26:18.418783",
+    "chunks": 11
+  },
+  "053779ea052ba020a0bde103d9063c90": {
+    "filename": "Deep Learning.pdf",
+    "upload_time": "2025-04-16T10:26:19.303349",
+    "chunks": 8
+  },
+  "74a2cc620e59c0ff6a499dc6ebfdb202": {
+    "filename": "Unsupervised Learning.pdf",
+    "upload_time": "2025-04-16T10:26:20.328237",
+    "chunks": 10
+  },
+  "5f11ac2b0fd510cd7fb8552a47cb0bd3": {
+    "filename": "Supervised Learning.pdf",
+    "upload_time": "2025-04-16T10:26:25.051928",
+    "chunks": 14
+  },
+  "103840f7ab1bcf9efe3b91d0fd1024fe": {
+    "filename": "Machine Learning Fundamentals.pdf",
+    "upload_time": "2025-04-16T10:26:25.594220",
+    "chunks": 12
+  },
+  "96fa018aad9a370e51ebd4155fc7d23a": {
+    "filename": "NLP.pdf",
+    "upload_time": "2025-04-16T10:26:30.282803",
+    "chunks": 11
+  },
+  "9dce68a510f7db77737e32fe085d37cf": {
+    "filename": "trained4.pdf",
+    "upload_time": "2025-04-17T15:09:14.626233",
+    "chunks": 1
+  },
+  "cc96856c39cd7b5dbb0a1cfcf57d1c35": {
+    "filename": "Trained3.pdf",
+    "upload_time": "2025-04-17T15:09:16.766419",
+    "chunks": 51
+  },
+  "60423def08238bfb8d91d15c1d55cb60": {
+    "filename": "c0943333_REFLECTION_QUESTIONS_PART_2.pdf",
+    "upload_time": "2025-04-17T16:36:40.820596",
+    "chunks": 12
   }
 }

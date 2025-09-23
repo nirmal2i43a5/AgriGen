@@ -60,7 +60,9 @@ class QueryRequest(BaseModel):
     formatting_instructions: str = ""
 
 
-
+'''
+Initialize Mistral LLM 
+'''
 
 class MistralAIWrapper(LLM):
     client: Any
@@ -68,7 +70,7 @@ class MistralAIWrapper(LLM):
     
     def __init__(self, api_key: str, model_name: str = "mistral-tiny"):
         super().__init__()
-        self.client = MistralClient(api_key=api_key)
+        self.client = MistralClient(api_key=api_key) #helps to communicate with mistral API
         self.model_name = model_name
     
     @property
@@ -85,7 +87,7 @@ class MistralAIWrapper(LLM):
         # try:
         # Send request to Mistral API
         messages = [ 
-                    ChatMessage(role="user", content=prompt) 
+                    ChatMessage(role="user", content=prompt) #structure the message as per Mistral API requirements 
                     ]
         response = self.client.chat(
             model=self.model_name,
@@ -93,8 +95,7 @@ class MistralAIWrapper(LLM):
             messages = messages
         )
 
-        # Debug information
-        print(f"Response type: {type(response)}")
+  
 
         # Handle different response formats
         try:
@@ -126,6 +127,9 @@ class MistralAIWrapper(LLM):
             # Return the raw response as string to avoid breaking your application
             return f"Error processing LLM response: {str(e)}"
         
+        
+        
+''' Initialize Mistral LLM '''
 
 llm = MistralAIWrapper(api_key=mistral_api_key, model_name="mistral-tiny")
 
@@ -181,7 +185,6 @@ async def upload_documents(files: List[UploadFile] = File(...)):
                 
                 
                 # Process the PDF
-                
                 chunks = pdf_processor.process_pdf(file_path)
                 
                 # Add proper metadata to each chunk
@@ -326,6 +329,9 @@ async def list_documents():
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+
 
 @app.post("/clear")
 async def clear_documents():

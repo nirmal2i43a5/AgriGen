@@ -38,8 +38,6 @@ class VectorStore:
     def __init__(self, persist_directory: str = "chroma_db"):
         self.persist_directory = persist_directory
         
-        # Get Mistral API key
-        # mistral_api_key = os.getenv("API_KEY")
         mistral_api_key = "mBaX8nyDl9LyoHxkEknMAXu8bE6BJpXf"
         
         # Use Mistral embeddings
@@ -60,7 +58,6 @@ class VectorStore:
         return self.vectorstore.similarity_search(query, k=k)
 
     def clear(self):
-        """Clear all documents from the vector store."""
         try:
             print("Clearing vector store")
             # Use the collection.delete method with an empty filter to delete all documents

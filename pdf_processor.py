@@ -31,6 +31,9 @@ def save_registry():
 
 
 class PDFProcessor:
+    '''
+    chunk_overlap is the number of characters that overlap between chunks.i.e context continuity 
+    '''
     def __init__(self, chunk_size: int = 1000, chunk_overlap: int = 200):
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap

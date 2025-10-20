@@ -15,14 +15,14 @@ class GTELargeEmbeddings(Embeddings):
     batch_size: int = 32
     
     def __init__(self, model_name: str = "thenlper/gte-large", batch_size: int = 32):
-        print(f"[INFO] Loading {model_name}...")
+        print(f"Loading {model_name}...")
         self.model = SentenceTransformer(model_name)
         self.model_name = model_name
         self.batch_size = batch_size
-        print(f"[INFO] Initialized GTE-Large embeddings (batch_size={batch_size})")
+        print(f"Initialized GTE-Large embeddings (batch_size={batch_size})")
     
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
-        print(f"[INFO] Embedding {len(texts)} documents...")
+        print(f"Embedding {len(texts)} documents...")
         texts = [t.strip() for t in texts if t and t.strip()]
         
         if not texts:
@@ -36,7 +36,7 @@ class GTELargeEmbeddings(Embeddings):
         )
         
         embeddings_list = [emb.tolist() for emb in embeddings]
-        print(f"[INFO] Successfully embedded {len(embeddings_list)} documents")
+        print(f"Successfully embedded {len(embeddings_list)} documents")
         return embeddings_list
     
     def embed_query(self, text: str) -> List[float]:
@@ -52,7 +52,7 @@ class EmbeddingPipeline:
     def __init__(self, chunk_size: int = 1500, chunk_overlap: int = 300):
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
-        print(f"[INFO] Initialized EmbeddingPipeline (chunk_size={chunk_size}, overlap={chunk_overlap})")
+        print(f"Initialized EmbeddingPipeline (chunk_size={chunk_size}, overlap={chunk_overlap})")
 
     def chunk_documents(self, documents: List[Any]) -> List[Document]:
         splitter = RecursiveCharacterTextSplitter(
@@ -62,7 +62,7 @@ class EmbeddingPipeline:
             separators=["\n\n", "\n", " ", ""]
         )
         chunks = splitter.split_documents(documents)
-        print(f"[INFO] Split {len(documents)} documents into {len(chunks)} chunks")
+        print(f"Split {len(documents)} documents into {len(chunks)} chunks")
         return chunks
 
 

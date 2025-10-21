@@ -1,0 +1,97 @@
+/* Sidebar Styles */
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    min-width: 300px;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    padding: 0.5rem 1rem;
+}
+
+/* Remove button borders and style as text links */
+.stButton > button {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 4px 8px !important;
+    text-align: left !important;
+    width: 100% !important;
+    color: #4a5568 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.2s ease !important;
+    margin: 0 !important;
+}
+
+/* Reduce spacing between chat history buttons */
+.stButton {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.stButton > button:hover {
+    background-color: #f7fafc !important;
+    color: #1a202c !important;
+    border-radius: 8px !important;
+}
+
+/* Style for primary button (New Chat) */
+.stButton > button[kind="primary"] {
+    background-color: #10b981 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background-color: #059669 !important;
+}
+
+/* Hide Browse files text in sidebar file uploader */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button * {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button span,
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button div,
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button p {
+    font-size: 0 !important;
+    color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    text-indent: -9999px !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+    font-size: 0 !important;
+    color: transparent !important;
+    text-indent: -9999px !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button::before {
+    content: none !important;
+}
+
+/* Show only paperclip icon for sidebar uploader */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button::after {
+    content: "📎";
+    font-size: 18px;
+    display: block !important;
+    text-indent: 0 !important;
+    color: #555555 !important;
+}
+
+/* Hide uploaded file list in sidebar */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] ul,
+[data-testid="stSidebar"] [data-testid="stFileUploader"] li {
+    display: none !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="fileDeleteBtn"] {
+    display: none !important;
+}
+

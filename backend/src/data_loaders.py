@@ -7,8 +7,7 @@ from langchain_community.document_loaders import JSONLoader
 
 
 def load_all_documents(data_dir: str) -> List[Any]:
-    
-    """Supported: PDF, TXT, CSV, Excel, Word, JSON"""
+
     
     data_path = Path(data_dir).resolve()
     print(f"Loading documents from: {data_path}")
@@ -70,4 +69,3 @@ def load_all_documents(data_dir: str) -> List[Any]:
 
     print(f"Total loaded documents: {len(documents)}")
     return documents
-

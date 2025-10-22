@@ -6,7 +6,6 @@ import os
 
 
 class ChatMemory:
-    # Manages chat history persistence using SQLite with multi-session support
     
     def __init__(self, db_path: str = "databases/chat_history.db"):
         self.db_path = db_path
@@ -119,4 +118,19 @@ class ChatMemory:
         conn.commit()
         conn.close()
         print(f"Renamed session {session_id} to '{new_name}'")
+
+    def delete_session(self, session_id: int):
+        """Delete a session and all its chat history"""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        # Delete chat history first (due to foreign key constraint)
+        cursor.execute("DELETE FROM chat_history WHERE session_id = ?", (session_id,))
+        
+        # Delete the session
+        cursor.execute("DELETE FROM sessions WHERE id = ?", (session_id,))
+        
+        conn.commit()
+        conn.close()
+        print(f"Deleted session {session_id} and all its chat history")
 

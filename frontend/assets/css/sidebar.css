@@ -1,6 +1,4 @@
-/* Sidebar Styles */
 
-/* Sidebar styling */
 [data-testid="stSidebar"] {
     min-width: 300px;
 }
@@ -78,7 +76,7 @@
 
 /* Show only paperclip icon for sidebar uploader */
 [data-testid="stSidebar"] [data-testid="stFileUploader"] button::after {
-    content: "📎";
+    content: "📄";
     font-size: 18px;
     display: block !important;
     text-indent: 0 !important;
@@ -93,5 +91,232 @@
 
 [data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="fileDeleteBtn"] {
     display: none !important;
+}
+
+/* Three-dot menu button styling */
+[data-testid="stSidebar"] .stButton > button[title="Chat options"] {
+    width: 30px !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    border-radius: 50% !important;
+    background-color: transparent !important;
+    color: #6b7280 !important;
+    border: 1px solid #e5e7eb !important;
+    margin: 0 !important;
+}
+
+[data-testid="stSidebar"] .stButton > button[title="Chat options"]:hover {
+    background-color: #f3f4f6 !important;
+    color: #374151 !important;
+    border-color: #d1d5db !important;
+}
+
+/* ChatGPT-style dropdown popup */
+[data-testid="stSidebar"] .chatgpt-dropdown-popup {
+    position: absolute !important;
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    padding: 4px 0 !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+    min-width: 100px !important;
+    right: -10px !important;
+    top: 0 !important;
+    animation: chatgptDropdownFadeIn 0.2s ease-out !important;
+}
+
+/* Dropdown items */
+[data-testid="stSidebar"] .chatgpt-dropdown-popup .dropdown-item {
+    display: block !important;
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+    color: #374151 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: background-color 0.15s ease !important;
+    border-radius: 4px !important;
+    margin: 2px 4px !important;
+}
+
+[data-testid="stSidebar"] .chatgpt-dropdown-popup .dropdown-item:hover {
+    background-color: #f3f4f6 !important;
+    color: #1f2937 !important;
+}
+
+[data-testid="stSidebar"] .chatgpt-dropdown-popup .dropdown-item.delete-item {
+    color: #dc2626 !important;
+}
+
+[data-testid="stSidebar"] .chatgpt-dropdown-popup .dropdown-item.delete-item:hover {
+    background-color: #fef2f2 !important;
+    color: #dc2626 !important;
+}
+
+/* Hide the hidden functionality buttons */
+[data-testid="stSidebar"] .stButton > button[help="Rename"],
+[data-testid="stSidebar"] .stButton > button[help="Delete"] {
+    display: none !important;
+}
+
+@keyframes chatgptDropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ChatGPT dropdown button styling */
+[data-testid="stSidebar"] .chatgpt-dropdown .stButton > button {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 4px !important;
+    color: #374151 !important;
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+    margin: 2px 4px !important;
+    text-align: left !important;
+    width: calc(100% - 8px) !important;
+    box-shadow: none !important;
+    transition: background-color 0.15s ease !important;
+    font-weight: 500 !important;
+}
+
+[data-testid="stSidebar"] .chatgpt-dropdown .stButton > button:hover {
+    background-color: #f3f4f6 !important;
+    color: #1f2937 !important;
+}
+
+[data-testid="stSidebar"] .chatgpt-dropdown .stButton > button:has-text("Delete"):hover {
+    background-color: #fef2f2 !important;
+    color: #dc2626 !important;
+}
+
+[data-testid="stSidebar"] .chatgpt-dropdown .stButton > button:has-text("Delete") {
+    color: #dc2626 !important;
+}
+
+/* Dropdown menu options styling */
+[data-testid="stSidebar"] .dropdown-container .stButton > button:has-text("Rename"),
+[data-testid="stSidebar"] .dropdown-container .stButton > button:has-text("Delete") {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 4px !important;
+    color: #374151 !important;
+    font-size: 0.9rem !important;
+    padding: 8px 16px !important;
+    margin: 2px 8px !important;
+    text-align: left !important;
+    width: calc(100% - 16px) !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-testid="stSidebar"] .dropdown-container .stButton > button:has-text("Rename"):hover {
+    background-color: #f0f9ff !important;
+    color: #1e40af !important;
+}
+
+[data-testid="stSidebar"] .dropdown-container .stButton > button:has-text("Delete") {
+    color: #dc2626 !important;
+}
+
+[data-testid="stSidebar"] .dropdown-container .stButton > button:has-text("Delete"):hover {
+    background-color: #fef2f2 !important;
+    color: #b91c1c !important;
+}
+
+/* Add backdrop blur effect when dropdown is open */
+[data-testid="stSidebar"] .dropdown-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: -1;
+}
+
+/* Improve dropdown positioning */
+[data-testid="stSidebar"] .stContainer:has(.dropdown-container) {
+    position: relative !important;
+}
+
+/* Better spacing for dropdown items */
+[data-testid="stSidebar"] .dropdown-container .stButton {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+[data-testid="stSidebar"] .dropdown-container .stButton > button {
+    border-radius: 4px !important;
+    margin: 1px 4px !important;
+    width: calc(100% - 8px) !important;
+}
+
+/* Warning message styling */
+[data-testid="stSidebar"] .stAlert {
+    margin: 8px 0 !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    font-size: 0.9rem !important;
+}
+
+/* Text input styling for rename */
+[data-testid="stSidebar"] .stTextInput > div > div > input {
+    font-size: 0.9rem !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    border: 1px solid #d1d5db !important;
+}
+
+/* Save/Cancel button styling */
+[data-testid="stSidebar"] .stButton > button:has-text("Save"),
+[data-testid="stSidebar"] .stButton > button:has-text("Cancel") {
+    font-size: 0.85rem !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    margin: 2px !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:has-text("Save") {
+    background-color: #10b981 !important;
+    color: white !important;
+    border: none !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:has-text("Save"):hover {
+    background-color: #059669 !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:has-text("Cancel") {
+    background-color: #f3f4f6 !important;
+    color: #374151 !important;
+    border: 1px solid #d1d5db !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:has-text("Cancel"):hover {
+    background-color: #e5e7eb !important;
+}
+
+/* Delete confirmation buttons */
+[data-testid="stSidebar"] .stButton > button:has-text("Yes, Delete") {
+    background-color: #dc2626 !important;
+    color: white !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:has-text("Yes, Delete"):hover {
+    background-color: #b91c1c !important;
 }
 

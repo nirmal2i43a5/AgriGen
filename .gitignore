@@ -115,6 +115,7 @@ chroma_db/
 data/raw/*.pdf
 data/processed/
 data/embeddings/
+data/test/
 temp_uploads/
 
 # Model Cache

@@ -11,7 +11,6 @@ from utils.styles import load_css
 
 def render_voice_modal(whisper_model):
     
-    # Load CSS from assets
     load_css('voice_input.css')
     
     # Render waveform animation
@@ -31,7 +30,6 @@ def render_voice_modal(whisper_model):
     """, unsafe_allow_html=True)
     
     
-    # Audio recorder with larger size for modal
     audio_bytes = audio_recorder(
         text="",
         recording_color="#e74c3c",
@@ -61,7 +59,6 @@ def render_voice_modal(whisper_model):
                         
                         st.info("Submitting your question...")
                         
-                        # Close modal and trigger query
                         return True
                     else:
                         st.warning("No speech detected. Please try again.")

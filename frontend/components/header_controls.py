@@ -4,7 +4,7 @@ import os
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
 
-from backend.llm.groq_model import (
+from backend.src.llm.groq_model import (
     GROQ_TEXT_MODELS,
     GROQ_VISION_MODELS,
     GROQ_WHISPER_MODELS,

@@ -9,7 +9,7 @@ import base64
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
 
-from backend.llm.groq_model import get_model_display_name
+from backend.src.llm.groq_model import get_model_display_name
 from utils.styles import load_css
 
 
@@ -66,7 +66,7 @@ def render_chat_input(whisper_model=None):
 
         with col2:
             query = st.text_input(
-                "Welcome to the AgriAdvisor-Ai-Assistant! Ask a question to get started.", 
+                "Welcome to the AgriGen - Farm Advisor Assistant! Ask a question to get started.", 
                 value=st.session_state.user_query, 
                 label_visibility="collapsed",
                 key="chat_input",

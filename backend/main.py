@@ -2,12 +2,11 @@ import os
 import sys
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 sys.path.insert(0, os.path.dirname(__file__))
 
-from api.routes import chat, documents, health
+from api.routes import chat, documents
 
-app = FastAPI(title="AgriAdvisor-Ai-Assistant API")
+app = FastAPI(title="AgriGen - Farm Advisor Assistant API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -19,25 +18,23 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
-    print("Starting API and initializing pipeline...")
-    from src.pipeline import initialize_pipeline
+    print("Starting API and initializing RAG pipeline...")
+    from backend.src.rag_pipeline import initialize_rag_pipeline
     
-    qa_chain, vector_store = initialize_pipeline()
+    rag_pipeline = initialize_rag_pipeline()
     
-    app.state.qa_chain = qa_chain
-    app.state.vector_store = vector_store
-    print("Pipeline initialized successfully")
+    # Store the pipeline in app state for API routes(saves time and resources)
+    app.state.rag_pipeline = rag_pipeline
+    print("RAG pipeline initialized successfully")
 
 
 app.include_router(chat.router, prefix="/api", tags=["chat"])
-app.include_router(documents.router, prefix="/api", tags=["documents"])
-app.include_router(health.router, prefix="/api", tags=["health"])
-
+app.include_router(documents.router, prefix="/api/documents", tags=["documents"])
 
 @app.get("/")
 async def root():
     return {
-        "message": "AgriAdvisor-Ai-Assistant-API",
+        "message": "AgriGen - Farm Advisor Assistant-API",
         "version": "1.0.0",
         "docs": "/docs"
     }

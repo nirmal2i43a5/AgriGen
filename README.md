@@ -1,16 +1,8 @@
-## Document Analyzer RAG
+## AgriAdvisor-AI
 
-A Retrieval-Augmented Generation (RAG) application that processes PDF documents and provides intelligent responses using Mistral AI.
-
- ## Features
-
-- PDF document ingestion and processing
-- Text chunking and vector embeddings
-- Vector store for efficient retrieval
-- Mistral AI integration for response generation
-- FastAPI-based REST API
+AgriAdvisor-AI is an intelligent crop advisory assistant powered by Retrieval-Augmented Generation (RAG).
+It helps farmers and researchers access actionable insights from agricultural and climate documents using GTE-Large embeddings, FAISS vector search, and Llama-3.3-70B model.
 
 
-## Setup
 
 

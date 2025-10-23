@@ -1,0 +1,117 @@
+/* Chat Interface Styles */
+
+/* Hide entire file uploader except button */
+[data-testid="stFileUploader"] {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+[data-testid="stFileUploader"] > label,
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] p,
+[data-testid="stFileUploader"] [data-testid="stMarkdownContainer"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+[data-testid="stFileUploader"] section {
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* Hide the drag and drop area completely */
+[data-testid="stFileUploader"] section > div:not(:has(button)) {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+[data-testid="stFileUploader"] section > div > div:not(:has(button)) {
+    display: none !important;
+}
+
+/* Hide uploaded file list (prevents duplicate icons) */
+[data-testid="stFileUploader"] ul {
+    display: none !important;
+}
+
+[data-testid="stFileUploader"] li {
+    display: none !important;
+}
+
+/* Hide file delete/clear buttons */
+[data-testid="stFileUploader"] [data-testid="fileDeleteBtn"] {
+    display: none !important;
+}
+
+/* Only show and style the button */
+[data-testid="stFileUploader"] button {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    border-radius: 50% !important;
+    background-color: #f0f2f6 !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+[data-testid="stFileUploader"] button:hover {
+    background-color: #e0e0e0 !important;
+}
+
+/* Hide all button text content */
+[data-testid="stFileUploader"] button * {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide Browse files text with multiple approaches */
+[data-testid="stFileUploader"] button::before {
+    content: none !important;
+}
+
+[data-testid="stFileUploader"] button span,
+[data-testid="stFileUploader"] button div,
+[data-testid="stFileUploader"] button p {
+    font-size: 0 !important;
+    color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    text-indent: -9999px !important;
+}
+
+/* Force button to be empty except for icon */
+[data-testid="stFileUploader"] button {
+    font-size: 0 !important;
+    color: transparent !important;
+    text-indent: -9999px !important;
+}
+
+/* Add image icon */
+[data-testid="stFileUploader"] button::after {
+    content: "🖼️";
+    font-size: 20px;
+    display: block !important;
+    text-indent: 0 !important;
+    color: #555555 !important;
+}
+
+/* Style for voice button */
+div[data-testid="column"]:last-child button {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    font-size: 20px !important;
+}
+

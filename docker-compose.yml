@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  agri-gen:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - API_KEY=${API_KEY}
+      - FAISS_STORE_PATH=faiss_store
+      - DATA_DIR=data/raw
+    volumes:
+      - ./data:/app/data
+      - ./faiss_store:/app/faiss_store
+      - ./databases:/app/databases
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

@@ -151,3 +151,10 @@ notes/
 test/
 chat_history.db
 .streamlit/
+
+
+data/*
+!data/.gitkeep
+
+models/*
+!models/.gitkeep

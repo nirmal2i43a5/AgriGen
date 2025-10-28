@@ -112,6 +112,9 @@ faiss_index/
 chroma_db/
 *.index
 *.pkl
+
+
+
 data/raw/*.pdf
 data/processed/
 data/embeddings/
@@ -158,3 +161,9 @@ data/*
 
 models/*
 !models/.gitkeep
+
+databases/*
+!databases/.gitkeep
+
+faiss_store/*
+!faiss_store/.gitkeep

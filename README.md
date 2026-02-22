@@ -231,24 +231,6 @@ CMD ["streamlit", "run", "frontend/app.py"]
 
 ---
 
-## **Future Enhancements**
-
-### **Planned Features**
-
-- [ ] **Multi-language Support**: Hindi, Spanish, French
-- [ ] **Advanced Analytics**: Usage patterns, model performance
-- [ ] **Mobile App**: React Native mobile interface
-- [ ] **Offline Mode**: Local model deployment
-- [ ] **API Rate Limiting**: User-based rate limiting
-- [ ] **Response Caching**: Redis-based answer caching
-
-### **Technical Improvements**
-
-- [ ] **Microservices**: Split into independent services
-- [ ] **Message Queues**: Redis/RabbitMQ for async processing
-- [ ] **Monitoring**: Prometheus + Grafana dashboards
-- [ ] **CI/CD**: GitHub Actions for automated testing
-- [ ] **Documentation**: API documentation with Swagger
 
 ---
 
@@ -265,3 +247,4 @@ CMD ["streamlit", "run", "frontend/app.py"]
 ## **License**
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
